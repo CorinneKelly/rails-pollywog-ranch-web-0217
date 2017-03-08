@@ -1,3 +1,5 @@
 class Frog < ActiveRecord::Base
-  # code goes here
+  belongs_to :pond
+  has_many :tadpoles
+  delegate :tadpole, to: :pond, allow_nil: true
 end
